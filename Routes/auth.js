@@ -28,11 +28,11 @@ router.post('/login', (req,res) => {
                             },process.env.JWT_KEY,{expiresIn:'1h'})
                             
 
-                            res.cookie('enigma',{
+                            res.cookie('evento',{
                                 token: token
                             })
 
-                            
+
                             res.send({Status: 1,Message: "Authenticated", data: {
                                 Name: obj.Name,
                                 Events: obj.Events
