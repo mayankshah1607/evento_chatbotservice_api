@@ -2,26 +2,27 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema  = new Schema({
-    Name: String,
+    EventName: String,
     Organization : String,
     Desc: String,
-    0: String,
-    1: String,
-    2: String,
-    3: String,
-    4: String,
-    5: String,
-    6: String,
-    7: String,
-    8: String,
-    9: String,
-    10: String,
-    11: String,
-    12: String,
-    13: String,
-    14: String,
-    15: String,
-    16: String
+    get_event_fees: String,
+    is_refundable: String,
+    get_registration_date: String,
+    get_payment_method: String,
+    get_prizes: String,
+    get_discounts: String,
+    greet: String,
+    show_schedule: String,
+    get_event_date: String,
+    get_event_time : String,
+    show_accomodation: String,
+    show_speakers: String,
+    speaker_details_extra: String,
+    show_food_arrangements: String,
+    get_distance: String,
+    get_location: String,
+    show_contact_info: String,
+    about_chatbot: String
 })
 
 
@@ -32,6 +33,6 @@ const userSchema = new Schema({
     Events : [eventSchema]
 })
 
-const User = mongoose.model(userSchema,'user');
+const User = mongoose.model('user',userSchema);
 
 module.exports = User;

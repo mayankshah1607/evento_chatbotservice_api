@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 5000;
 const app = express();
 
+app.use(bodyParser.json());
+
 require('dotenv').config();
 
 const allowCrossDomain = function(req, res, next) {
@@ -40,7 +42,8 @@ mongoose.connect(process.env.MONGO_DB_URL, (err) => {
 
 app.use(allowCrossDomain);
 app.use(logger('dev'));
-app.use(bodyParser.json());
+app.use('/data',require('./Routes/data'));
+app.use('/auth',require('./Routes/auth'));
 
 app.listen(port, () => {
     console.log('App listening on ',port);
