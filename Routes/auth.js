@@ -75,5 +75,9 @@ router.post('/signup', (req,res) => {
     })
 })
 
+router.get('/logout',(req,res) => {
+    res.clearCookie('evento');
+})
+
 module.exports = router;
 

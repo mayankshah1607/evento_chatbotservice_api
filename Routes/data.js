@@ -20,13 +20,13 @@ router.post('/addevent', (req,res) => {
 
 
             else {
-                User.update({_id: id}, {$push: {Events: req.body}},{upsert: true}, (err)=> {
+                User.findOneAndUpdate({_id: id}, {$push: {Events: req.body}},{new: true,upsert: true}, (err, obj)=> {
                     if (err) {
                         console.log(err)
                         res.send({Status: 0})
                     }
                     else {
-                        res.send({Status:1})
+                        res.send({Status:1, data: obj.Events[obj.Events.length-1]})
                     }
                 })
             }
