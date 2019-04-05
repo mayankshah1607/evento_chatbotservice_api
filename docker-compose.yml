@@ -1,0 +1,18 @@
+version: "3"
+services: 
+  web:
+    build:
+      context: ./evento_chatbotservice_web
+      dockerfile: Dockerfile.dev
+    ports:
+    - "3000:3000"
+    volumes: 
+    - ./evento_chatbotservice_web:/usr/app
+  backend:
+    build:
+      context: ./evento_chatbotservice_api
+      dockerfile: Dockerfile.dev
+    ports:
+    - "5000:5000"
+    volumes: 
+    - ./evento_chatbotservice_api:/usr/app

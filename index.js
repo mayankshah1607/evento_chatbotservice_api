@@ -47,6 +47,7 @@ app.use(logger('dev'));
 app.use(cookieParser());
 app.use('/data',require('./Routes/data'));
 app.use('/auth',require('./Routes/auth'));
+app.use('/chat',require('./Routes/chat'));
 
 app.listen(port, () => {
     console.log('App listening on ',port);

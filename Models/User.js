@@ -22,7 +22,8 @@ const eventSchema  = new Schema({
     get_distance: String,
     get_location: String,
     show_contact_info: String,
-    about_chatbot: String
+    about_chatbot: String,
+    History: Array
 })
 
 

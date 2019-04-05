@@ -34,4 +34,21 @@ router.post('/addevent', (req,res) => {
     })
 })
 
+router.post('/delete', (req,res) => {
+
+    const decoded = jwt.verify(req.cookies.evento.token,process.env.JWT_KEY);
+    const id = decoded.id;
+
+    User.update({_id: id}, {
+        $pull: {
+            Events:{
+                _id : req.body.sub_id
+            }
+        }
+    })
+    .exec()
+    .then(res.send({Status: 1, Message: 'Deleted'}))
+
+})
+
 module.exports = router;
