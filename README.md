@@ -23,6 +23,6 @@ Run the following commands:
 
 ### (Full stack)
 
-Clone the front-end web app repository from https://github.com/mayankshah1607/evento_chatbotservice_web and place it in the same directory as ./evento_chatbotservice_api
+Clone the front-end web app repository from [here](https://github.com/mayankshah1607/evento_chatbotservice_web) and place it in the same directory as ./evento_chatbotservice_api
 
 Then, run (in the current dir ./evento_chatbotservice_api) : ```docker-compose up --build```
